@@ -1,0 +1,11 @@
+++++++++++++++++++++++++++++ Maing Course  ++++++++++++++++++++++++++++
+Course -> https://www.youtube.com/watch?v=X48VuDVv0do 
+
+++++++++++++++++++++++++++++ References ++++++++++++++++++++++++++++
+
+MongoDB - https://hub.docker.com/_/mongo
+Mongo-express - https://hub.docker.com/_/mongo-express
+
+++++++++++++++++++++++++++++ Debugging  ++++++++++++++++++++++++++++
+
+Version Error in Ingress -> https://stackoverflow.com/questions/64125048/get-error-unknown-field-servicename-in-io-k8s-api-networking-v1-ingressbacken
