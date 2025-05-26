@@ -6,13 +6,7 @@ metadata:
   namespace: kubernetes-dashboard
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
-spec:
-  #tls:
-  #- hosts:
-  #  - dashboard.com
-  #  secretName: myapp-secret-tls  ( name in "Secret" & in the same namespace )
-  #  in secret -> tls.crt: base64 encoded cert
-  #               tls.key: base64 encoded key 
+spec: 
   rules:
   - host: dashboard.com
     http:
@@ -24,6 +18,12 @@ spec:
             name: kubernetes-dashboard
             port:
               number: 80
+#tls:
+#- hosts:
+#  - dashboard.com
+#  secretName: myapp-secret-tls  ( name in "Secret" & in the same namespace )
+#  in secret -> tls.crt: base64 encoded cert
+#               tls.key: base64 encoded key
 # same host "dashboard.com" mutiple paths -> path: analytics ->  ashboard.com/analytics & analytics-service
 # multiple host, sub-domains "analytics.dashboard.com"
 
