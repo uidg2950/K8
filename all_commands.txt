@@ -1,0 +1,78 @@
+All commands 
+
+ ================== Init Commands  ==================
+# start minikube
+$ minikube start --vm-driver=hyperkit
+
+# Status of nodes
+$ kubectl get nodes
+
+# minikube status
+$ minikube status
+
+# version 
+$ kubectl version
+
+ ================== Basic Kubectl Commands ==================
+ 
+$ kubectl get pod
+$ kubectl get services
+
+# create pod - from container image
+# kubectl create deployment NAME --image=image [--dry-run] [options]
+$ kubectl create deployment nginx-depl --image=nginx 
+
+# most basic configuration for deployment
+
+
+$ kubectl get deployment    
+$ kubectl get pod  # shows "ContainerCreating" so that, not ready yet.
+
+$ kubectl get replicaset  # managing replicas of a pod
+
+# Edit Deployment
+$ kubectl edit deployment nginx-depl
+$ kubectl get replicates 
+
+# There will be a new replica ID 
+
+ ================== Logs & Debugging Commands ==================
+
+$ kubectl create deployment mongo-depl --image=mongo
+$ kubectl get pod
+$ kubectl logs mongo-depl-85ffbc9879-84ssq
+$ kubectl describe pod mongo-depl-85ffbc9879-84ssq
+
+# Connect to the pod/app ( Terminal )
+$ kubectl exec -it mongo-depl-85ffbc9879-84ssq -- /bin/bash
+
+
+
+$ kubectl get deployment
+$ kubectl delete deployment mongo-depl
+$ kubectl get replicaset
+
+ ================== Config files Commands ==================
+
+$ kubectl apply -f [file_name] # config-file.yaml
+$ kubectl apply -f nginx-deployment-original.yaml
+$ vi nginx-deployment-original.yaml 
+
+# change replicas to 2
+
+$ kubectl apply -f nginx-deployment-original.yaml
+$ kubectl get deployment
+$ kubectl get pod
+
+
+$ kubectl delete -f [file_name]
+
+ ================== Exercise Commands ==================
+
+$ kubectl get service
+$ kubectl describe service nginx-service
+$ kubectl get pod -o wide
+$ kubectl get deployment nginx-deployment -o yaml > nginx-results.yaml 
+
+
+
